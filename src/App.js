@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import ListOfGifs from './components/listOfGifs';
 
 function App() {
+  const [search, setSearch]=useState('')
+  const [keyword, setKeyword]=useState('');
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setKeyword(search)
+    
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-header">
+        <form onSubmit={handleSubmit}>
+          <label>Gifs a buscar:
+            <input type="text" 
+              value={search} 
+              onChange ={ (e)=>setSearch(e.target.value)}
+              caret-color="blue"
+            />
+
+          </label>
+          <input type='submit' />
+        </form>
+        
+        <ListOfGifs keyword={keyword}/>
+      </section>
     </div>
   );
 }
