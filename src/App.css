@@ -6,14 +6,18 @@ form{
 }
 input{
   margin: 8px;
-  border: 1px solid blue;
+  border: 1px solid rgb(240, 69, 7);
   border-radius:6px;
   font-size: 25px;
   background-color: #282c34;
   color: aliceblue;
+  caret-color: red;
 }
 
-
+img{
+  
+  shape-outside: margin-box;
+}
 
 .App-header {
   background-color: #282c34;

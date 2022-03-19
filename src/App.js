@@ -20,7 +20,7 @@ function App() {
             <input type="text" 
               value={search} 
               onChange ={ (e)=>setSearch(e.target.value)}
-              caret-color="blue"
+              
             />
 
           </label>
