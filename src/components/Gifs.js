@@ -7,8 +7,6 @@ export default function Gifs({singleGifs}){
          <a href={`#${singleGifs.id}`} className="gif">
             <img src={singleGifs.url} alt={singleGifs.url}/>
             <h4>Title: {singleGifs.title}</h4>
-              
           </a>   
-           
     )
 }

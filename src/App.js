@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import ListOfGifs from './components/listOfGifs';
+import {Link, Route} from 'wouter';
 
 function App() {
   const [search, setSearch]=useState('')
@@ -15,16 +16,20 @@ function App() {
   return (
     <div className="App">
       <section className="App-header">
-        <form onSubmit={handleSubmit}>
+        
           <label>Gifs a buscar:
             <input type="text" 
-              value={search} 
-              onChange ={ (e)=>setSearch(e.target.value)}
+              value={keyword} 
+              onChange ={ (e)=>{setKeyword(e.target.value)
+              }}
             />
+            
           </label>
-          <input type='submit' />
-        </form> 
-        <ListOfGifs keyword={keyword}/>
+           
+        <Link to={`/gif/${keyword}`} ><button >Click</button></Link>
+        <Route path="/gif/:keyword"
+        component={ListOfGifs}/>
+        {/* <ListOfGifs keyword={keyword}/> */}
       </section>
     </div>
   );
