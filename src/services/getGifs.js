@@ -10,14 +10,11 @@ const apiURL=`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword
     .then(response=>{
         const { data=[] }=response
         if(Array.isArray(data)){
-            console.log(data)
             const gifs=data.map(image=>{
-                
-                const {url,id}=image.images.downsized_medium
-                const {title}=image
-                return {url,title,id}
+                const {url}=image.images.downsized_medium
+                const {id,title}=image
+                return {id,url,title}
                 })
-
             return gifs;
         }
     });

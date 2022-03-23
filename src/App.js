@@ -20,13 +20,10 @@ function App() {
             <input type="text" 
               value={search} 
               onChange ={ (e)=>setSearch(e.target.value)}
-              
             />
-
           </label>
           <input type='submit' />
-        </form>
-        
+        </form> 
         <ListOfGifs keyword={keyword}/>
       </section>
     </div>

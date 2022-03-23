@@ -11,10 +11,11 @@ export default function ListOfGifs({keyword='panda'}){
 
     return(
         
-            gifs.map(singleGif => <Gifs
+            gifs.map(singleGif => 
+            <Gifs
               key={singleGif.id} 
               singleGifs={singleGif}
-              />
+            />
             )
           
     )
