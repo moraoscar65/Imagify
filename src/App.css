@@ -30,6 +30,23 @@ img{
   color: white;
 }
 
+.App-header button {
+  font-size: 25px;
+  border: red 1px solid;
+  color: aliceblue;
+  background-color: #282c34;
+  transition-duration: 0.4s;
+  margin: 30px;
+  
+}
+.App-header button:hover {
+  font-size: 25px;
+  border: #282c34 1px solid;
+  color: aliceblue;
+  background-color: red;
+  
+}
+
 .App-link {
   color: #61dafb;
 }

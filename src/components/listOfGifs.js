@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Gifs from "./Gifs"
+import Gifs from "../pages/show_gifs/Gifs"
 import getGifs from '../services/getGifs';
 
 export default function ListOfGifs({params}){
@@ -7,19 +7,19 @@ export default function ListOfGifs({params}){
     const [gifs,setGifs]=useState([])
    
     console.log(params)
-    const {keyword} =params
+    const {search} =params
     
     useEffect(()=>{
-        getGifs({keyword:keyword}).then(gifs=>setGifs(gifs))
-    },[keyword])
+        getGifs({keyword:search}).then(gifs=>setGifs(gifs))
+    },[search])
 
     return(
         
             gifs.map(singleGif => 
-            <Gifs
-              key={singleGif.id} 
-              singleGifs={singleGif}
-            />
+              <Gifs
+                key={singleGif.id} 
+                singleGifs={singleGif}
+              />
             )
           
     )
