@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
 import { useState } from "react";
-import Spinner from "../../components/spinner/spinner";
-
 
 export default function Home (){
     const [search, setSearch]=useState('')
