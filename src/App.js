@@ -11,15 +11,11 @@ function App() {
   return (
     <div className="App">
       <section className="App-header">
-        <Link to='/'></Link>
+        <Link to="/"></Link>
 
-        <Route path='/' 
-          component={Home}
-        />
-        <Route path="/gif/:search"
-          component={ListOfGifs}/>
-        <Route path="/search/:gif"
-          component={UniqueGif}/>
+        <Route path="/" component={Home} />
+        <Route path="/gif/:search" component={ListOfGifs} />
+        <Route path="/search/:gif" component={UniqueGif} />
         {/* <ListOfGifs keyword={keyword}/> */}
       </section>
     </div>
