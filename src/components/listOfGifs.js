@@ -1,22 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import Gifs from "./Gifs"
+import Gifs from "../pages/show_gifs/Gifs"
 import getGifs from '../services/getGifs';
+import Spinner from './spinner/spinner';
 
-export default function ListOfGifs({keyword='panda'}){
-    const [gifs,setGifs]=useState([])
+export default function ListOfGifs({params}){
+  const [gifs, setGifs] = useState([]);
+  const [spinner, setSpinner] = useState(false);
+  console.log(params);
+  const { search } = params;
 
-    useEffect(()=>{
-        getGifs({keyword:keyword}).then(gifs=>setGifs(gifs))
-    },[keyword])
+  useEffect(() => {
+    setSpinner(true);
+    getGifs({ keyword: search }).then((gifs) => {
+      setGifs(gifs);
+      setSpinner(false);
+    });
+  }, [search]);
 
-    return(
-        
-            gifs.map(singleGif => 
-            <Gifs
-              key={singleGif.id} 
-              singleGifs={singleGif}
-            />
-            )
-          
-    )
+  return spinner ? (
+    <Spinner />
+  ) : (
+    gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)
+  );
 }

@@ -5,9 +5,10 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    width: auto;
+    width:min-content;
     color: aliceblue;
 }
-.gim img {
+.gif img {
     object-fit: contain;
 }
+
