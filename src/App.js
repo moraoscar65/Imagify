@@ -3,7 +3,8 @@ import './App.css';
 import ListOfGifs from './components/listOfGifs';
 import Home from './pages/home/home';
 import {Link, Route} from 'wouter';
-import UniqueGif from './components/uniqueGif';
+import UniqueGif from './pages/uniqueGif/uniqueGif';
+import { GifsContextProvider } from './context/GifContext';
 
 function App() {
   
@@ -12,11 +13,11 @@ function App() {
     <div className="App">
       <section className="App-header">
         <Link to="/"></Link>
-
-        <Route path="/" component={Home} />
-        <Route path="/gif/:search" component={ListOfGifs} />
-        <Route path="/search/:gif" component={UniqueGif} />
-        {/* <ListOfGifs keyword={keyword}/> */}
+        <GifsContextProvider>
+          <Route path="/" component={Home} />
+          <Route path="/gif/:search" component={ListOfGifs} />
+          <Route path="/search/:gif" component={UniqueGif} />
+        </GifsContextProvider>
       </section>
     </div>
   );
