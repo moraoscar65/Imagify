@@ -25,8 +25,7 @@ export default function Home (){
               <button>Buscar</button>
             </Link>
           </label>
-        </form>
-        
+        </form>  
       </>
     );
 }
