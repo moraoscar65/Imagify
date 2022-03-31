@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import getGifs from "../services/getGifs";
 
 
-export default function UseGifs({search="Avengers"}){
+export default function useGifs({search="Avengers"}){
+
     const [gifs, setGifs] = useState([]);
     const [spinner, setSpinner] = useState(false);
   
@@ -13,6 +14,5 @@ export default function UseGifs({search="Avengers"}){
         setSpinner(false);
       });
     }, [search]);
-    console.log(gifs)
     return {spinner, gifs}
 }
