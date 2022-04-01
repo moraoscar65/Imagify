@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext,useEffect, useState } from "react";
 import getGifs from "../services/getGifs";
+import Context from "../context/GifContext";
 
 
 export default function useGifs({search} = {search : null}){
-  const [gifs, setGifs] = useState([]);
+  const {gifs, setGifs} = useContext(Context);
   const [spinner, setSpinner] = useState(false);
 
   useEffect(() => {
@@ -15,6 +16,6 @@ export default function useGifs({search} = {search : null}){
       setSpinner(false);
       localStorage.setItem("lastSearch", searchToUse);
     });
-  }, [search]);
+  }, [search, setGifs]);
   return { spinner, gifs };
 }

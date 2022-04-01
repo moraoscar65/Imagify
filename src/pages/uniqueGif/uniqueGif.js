@@ -1,14 +1,14 @@
 import React,{useContext} from "react";
 import Context from "../../context/GifContext";
+import Gifs from "../show_gifs/Gifs";
 
 export default function UniqueGif({params}){
-    const gifsContext= useContext(Context)
-    console.log(gifsContext)
+    const {gifs}= useContext(Context)
     const {gif}= params;
+    const gifSelected = gifs.find(singleGif => singleGif.id === gif)
+    if(gifs.length !==0) localStorage.setItem("gifContext", JSON.stringify(gifSelected))
+    const gifToUse= gifSelected || JSON.parse(localStorage.getItem("gifContext"))
     return (
-        
-        <div>
-            <label>{gif}</label>
-        </div>
+        <Gifs singleGifs={gifToUse} />
     )
 }
