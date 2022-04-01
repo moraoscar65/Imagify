@@ -1,6 +1,7 @@
-import Gifs from "../pages/show_gifs/Gifs"
-import useGifs from '../hooks/useGifs';
-import Spinner from './spinner/spinner';
+import Gifs from "../../pages/show_gifs/Gifs"
+import useGifs from '../../hooks/useGifs';
+import Spinner from '../spinner/spinner';
+
 
 export default function ListOfGifs({params}){
   const { search } = params;
@@ -19,6 +20,8 @@ export default function ListOfGifs({params}){
   return spinner ? (
     <Spinner />
   ) : (
-    gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)
+    <div className="ListOfGifs">
+      {gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)}
+    </div>
   );
 }

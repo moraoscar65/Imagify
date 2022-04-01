@@ -15,7 +15,6 @@ input{
 }
 
 img{
-  
   shape-outside: margin-box;
 }
 
@@ -51,3 +50,9 @@ img{
   color: #61dafb;
 }
 
+.logo{
+  margin: 10px auto;
+  padding: 20px 0;
+  width: 144px;
+ 
+}
