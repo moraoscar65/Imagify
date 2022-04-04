@@ -4,6 +4,7 @@ import { useState } from "react";
 import Gifs from "../show_gifs/Gifs";
 import useGifs from "../../hooks/useGifs";
 import Spinner from "../../components/spinner/spinner";
+import '../../components/listOfGifs/listOfGifs.css'
 
 export default function Home (){
     const [search, setSearch]=useState('')
@@ -33,7 +34,9 @@ export default function Home (){
             { spinner ? (
                 <Spinner />
               ) : (
-                gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)
+                <div className="ListOfGifs">
+                  {gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)}
+                </div>
               )
             }
         </div>
