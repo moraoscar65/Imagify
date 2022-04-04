@@ -1,7 +1,7 @@
 import Gifs from "../../pages/show_gifs/Gifs"
 import useGifs from '../../hooks/useGifs';
 import Spinner from '../spinner/spinner';
-
+import './listOfGifs.css';
 
 export default function ListOfGifs({params}){
   const { search } = params;
