@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "wouter";
 import { useState } from "react";
-import Gifs from "../show_gifs/Gifs";
 import useGifs from "../../hooks/useGifs";
 import Spinner from "../../components/spinner/spinner";
 import '../../components/listOfGifs/listOfGifs.css'
+import ListOfGifs from "../../components/listOfGifs/listOfGifs";
+import Category from "../../components/category";
 
 export default function Home (){
     const [search, setSearch]=useState('')
@@ -28,17 +29,16 @@ export default function Home (){
               <button>Buscar</button>
             </Link>
           </label>
-        </form>  
-        <div>
+        </form>
+        <div className="App-main">
+          <div className="App-results">
             <label>Gifs mas buscados:</label>
-            { spinner ? (
-                <Spinner />
-              ) : (
-                <div className="ListOfGifs">
-                  {gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)}
-                </div>
-              )
-            }
+            {spinner ? <Spinner /> : <ListOfGifs gifs={gifs} />}
+          </div>
+          <div className="App-category">
+            <label>Categorias Populares</label>
+            <Category name="Midudev" options={["Hola", "Avengers", "Pop"]}  />
+          </div>
         </div>
       </>
     );
