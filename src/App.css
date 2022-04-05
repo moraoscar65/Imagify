@@ -2,10 +2,10 @@
   text-align: center;
 }
 form{
-  margin: 20px;
+  margin-bottom: 20px;
 }
 input{
-  margin: 8px;
+  margin: 10px;
   border: 1px solid rgb(240, 69, 7);
   border-radius:6px;
   font-size: 25px;
@@ -23,10 +23,12 @@ img{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .App-header button {
@@ -51,8 +53,8 @@ img{
 }
 
 .logo{
-  margin: 10px auto;
-  padding: 20px 0;
-  width: 144px;
+  object-fit: contain;
+  height: 250px;
+  margin-bottom: 0px;
  
 }

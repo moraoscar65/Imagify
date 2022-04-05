@@ -21,7 +21,9 @@ export default function ListOfGifs({params}){
     <Spinner />
   ) : (
     <div className="ListOfGifs">
-      {gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)}
+      <div className="ListOfGifs-item">
+        {gifs.map((singleGif) => <Gifs key={singleGif.id} singleGifs={singleGif} />)}
+      </div>
     </div>
   );
 }
