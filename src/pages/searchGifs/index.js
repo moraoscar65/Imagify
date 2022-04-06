@@ -4,8 +4,7 @@ import useGifs from "../../hooks/useGifs";
 import Spinner from "../../components/spinner/spinner";
 
 export default function SearchGifs({params}){
-    
-    const {search} =params;
+  const {search} =params;
     const {spinner, gifs}= useGifs({search})
     //-----Esto se movio a un customHook para usarlo en otro componente
   //   const [gifs, setGifs] = useState([]);
