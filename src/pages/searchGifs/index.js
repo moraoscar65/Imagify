@@ -18,12 +18,11 @@ export default function SearchGifs({params}){
   //       setSpinner(false);
   //     });
   //   }, [search]);
-    console.log(search)
     return(
       <>{
         spinner ? <Spinner/> :
         <>
-          <h3>Gifs a buscar: {search}</h3>
+          <h3>Gifs a buscar: {decodeURI(search)}</h3>
           <ListOfGifs gifs={gifs} key={gifs[0].id}/>
         </>
         }
