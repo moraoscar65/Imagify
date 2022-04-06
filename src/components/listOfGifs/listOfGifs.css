@@ -24,7 +24,7 @@
     }
   }
   
-  @media (min-width: 800px) {
+  @media (min-width: 1000px) {
     :root {
       --results-columns: 4;
     }

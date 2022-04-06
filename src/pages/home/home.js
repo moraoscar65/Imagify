@@ -20,13 +20,14 @@ export default function Home (){
             Gifs a buscar:
             <input
               type="text"
+              size="15"
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
             />
             <Link to={`/gif/${search}`}>
-              <button>Buscar</button>
+              <button className="boton"><span>Buscar</span></button>
             </Link>
           </label>
         </form>

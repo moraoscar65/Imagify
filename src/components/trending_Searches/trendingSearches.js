@@ -8,6 +8,6 @@ export default function TrendingSearches(){
         getTrendingGifs().then(setTrends)
     },[])
     return (
-        <Category name='Trending' options={trends}/>
+        <Category name='Trending' options={trends} />
     )
 }
