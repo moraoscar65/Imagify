@@ -1,31 +1,20 @@
-:root {
-    --results-columns: 2;
-  }
   
   .ListOfGifs {
-    column-count: var(--results-columns);
-    column-gap: .5em;
-    margin-bottom: 1em;
-    margin-top: 1em;
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    gap: 0 12px;
+    align-items: center;
+    
   }
-  
-  .ListOfGifs-item {
-    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-    page-break-inside: avoid; /* Firefox */
-    break-inside: avoid; /* IE 10+ */
-    background-color: #eee;
-    display:inline-block;
-    width: 100%;
-  }
-  
-  @media (min-width: 600px) {
-    :root {
-      --results-columns: 3;
+  @media screen and (max-width: 670px){
+    .ListOfGifs{
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: repeat(auto-fit, minmax(190px,1fr));
+      gap: 0 10px;
+      align-items: center;
     }
   }
   
-  @media (min-width: 1000px) {
-    :root {
-      --results-columns: 4;
-    }
-  }
