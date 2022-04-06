@@ -1,6 +1,7 @@
 .Category-title {
     color: white;
     font-weight: bold;
+    margin-bottom: 0;
 }
 
 .Category-list {
@@ -9,12 +10,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     list-style-type: none;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .Category-link {
     color: white;
-    font-size: 1em;
+    font-size: .9em;
     padding: .5em;
     transition: color ease-in .1s;
     text-decoration: none;
@@ -26,13 +27,16 @@
 
 @media screen and (min-width: 640px) {
     .Category-list {
-        display: list-item;
+        display:inline;
+        margin: 0;
     }
 
     .Category-list li::before {
         color: #8c55a2;
-        content: '';
+        /* content: ''; */
         margin-right: .5em;
-        font-size: 1em;
+        font-size: .9em;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 }

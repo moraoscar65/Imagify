@@ -79,9 +79,9 @@ img{
   }
 
   .App-category{
-    padding: 0 2em;
+    padding: 10 .7em;
     position: sticky;
     top: 0;
-    width: 40%;
+    width: 50%;
   }
 }

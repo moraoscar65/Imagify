@@ -5,7 +5,7 @@ import useGifs from "../../hooks/useGifs";
 import Spinner from "../../components/spinner/spinner";
 import '../../components/listOfGifs/listOfGifs.css'
 import ListOfGifs from "../../components/listOfGifs/listOfGifs";
-import Category from "../../components/category";
+import TrendingSearches from "../../components/trending_Searches/trendingSearches";
 
 export default function Home (){
     const [search, setSearch]=useState('')
@@ -36,8 +36,7 @@ export default function Home (){
             {spinner ? <Spinner /> : <ListOfGifs gifs={gifs} />}
           </div>
           <div className="App-category">
-            <label>Categorias Populares</label>
-            <Category name="Midudev" options={["Hola", "Avengers", "Pop"]}  />
+            <TrendingSearches/>
           </div>
         </div>
       </>
