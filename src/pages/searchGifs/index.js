@@ -22,7 +22,8 @@ export default function SearchGifs({params}){
         spinner ? <Spinner/> :
         <>
           <h3>Gifs a buscar: {decodeURI(search)}</h3>
-          <ListOfGifs gifs={gifs} key={gifs[0].id}/>
+          
+          <ListOfGifs gifs={gifs}/>
         </>
         }
       </>
